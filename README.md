@@ -198,6 +198,7 @@ Password: password123
 6. Filter tasks
 
 ---
+```
 
 ## ⚠️ Known Limitations
 
