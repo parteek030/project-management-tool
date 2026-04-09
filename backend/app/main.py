@@ -13,8 +13,7 @@ app = FastAPI(title="Project Management Tool")
 # Allow frontend to talk to backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173",  # Vite's default port
-                   "https://project-management-tool-eight-eta.vercel.app"],  
+    allow_origins=["*"],  # In production, specify your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
