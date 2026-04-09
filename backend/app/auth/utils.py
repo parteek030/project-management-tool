@@ -14,10 +14,16 @@ ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password[:72])
+    # Truncate password to ensure UTF-8 encoded bytes <= 72
+    while len(password.encode('utf-8')) > 72:
+        password = password[:-1]
+    return pwd_context.hash(password)
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password[:72], hashed_password)
+    # Apply the same truncation logic for verification
+    while len(plain_password.encode('utf-8')) > 72:
+        plain_password = plain_password[:-1]
+    return pwd_context.verify(plain_password, hashed_password)
 
 # JWT token
 def create_access_token(data: dict) -> str:
