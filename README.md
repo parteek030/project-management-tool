@@ -174,13 +174,19 @@ Handled via Axios interceptor.
 
 ---
 
-## 🌱 Seeder (if applicable)
+## 🌱 Seeder
 
-```
+Run the seeder to populate the database with sample data:
+
+```bash
 python seeds/seed.py
-```
 
----
+Use any of the following users:
+
+Email: alice@test.com
+Password: password123
+Email: bob@test.com
+Password: password123
 
 ## 🧪 How to Use
 
@@ -192,6 +198,7 @@ python seeds/seed.py
 6. Filter tasks
 
 ---
+```
 
 ## ⚠️ Known Limitations
 
