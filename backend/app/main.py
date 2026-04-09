@@ -4,10 +4,7 @@ from app.database import engine, Base
 from app.auth import routes as auth_routes
 from app.projects import routes as project_routes
 from app.tasks import routes as task_routes
-from app.database import Base, engine
 
-Base.metadata.drop_all(bind=engine)
-Base.metadata.create_all(bind=engine)
 # Create all tables in the database
 Base.metadata.create_all(bind=engine)
 
