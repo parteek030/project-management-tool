@@ -14,7 +14,7 @@ app = FastAPI(title="Project Management Tool")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173",  # Vite's default port
-                   "https://your-app.vercel.app"],  
+                   "https://project-management-tool-eight-eta.vercel.app"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
